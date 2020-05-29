@@ -8,8 +8,10 @@ import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {//name the class like frame, button associating with the extension JFrame, JButton
 	
-	private JButton btn;//variables
+	//variables
+	private JButton btn;
 	private TextPanel textPanel;
+	private Toolbar toolbar;
 
 	public MainFrame() {
 		
@@ -18,6 +20,7 @@ public class MainFrame extends JFrame {//name the class like frame, button assoc
 		
 		setLayout(new BorderLayout());
 		
+		toolbar = new Toolbar();
 		btn = new JButton("Click Me");//this is a button 
 		textPanel = new TextPanel();// this is a panel
 		
@@ -25,12 +28,14 @@ public class MainFrame extends JFrame {//name the class like frame, button assoc
 		//giving action to the button when clicked
 		btn.addActionListener(new ActionListener() {//annonymous
 
+			//connection with TextPanel - constructor appendText
 			public void actionPerformed(ActionEvent arg0) {
 				textPanel.appendText("Hello you clicked!\n");//invoking a text from method
 				
 			}
 		});
 		
+		add(toolbar, BorderLayout.NORTH);
 		add(textPanel, BorderLayout.CENTER);//position and visibility
 		add(btn, BorderLayout.SOUTH);
 		

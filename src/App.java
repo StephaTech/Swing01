@@ -9,7 +9,6 @@ public class App {
 		//dispatch thread at its next convenience.
 		//make sure that the code to update it,is inside a call to invokeLater().
 		SwingUtilities.invokeLater(new Runnable(){
-
 			public void run() {
 				new MainFrame();
 			}
