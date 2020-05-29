@@ -11,10 +11,7 @@ public class App {
 		SwingUtilities.invokeLater(new Runnable(){
 
 			public void run() {
-				JFrame frame = new JFrame("Hello World");
-				frame.setSize(600, 500);//this set the size of the frame
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//this stop the program to run for complete
-				frame.setVisible(true);//this set the frame visible
+				new MainFrame();
 			}
 			
 		});// the close )
