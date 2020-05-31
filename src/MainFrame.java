@@ -22,7 +22,12 @@ public class MainFrame extends JFrame {//name the class like frame, button assoc
 		toolbar = new Toolbar();
 		textPanel = new TextPanel();// this is a panel
 		
-		toolbar.setTextPanel(textPanel);
+		//setting listener anonymous toolbar
+		toolbar.setStringListeners(new StringListeners() {
+			public void textEmitted(String text) {
+				textPanel.appendText(text);
+			}
+		});
 				
 		add(toolbar, BorderLayout.NORTH);
 		add(textPanel, BorderLayout.CENTER);//position and visibility

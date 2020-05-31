@@ -10,7 +10,8 @@ public class Toolbar extends JPanel implements ActionListener {
 	//variables
 	private JButton helloButton;
 	private JButton goodbyeButton;
-	private TextPanel textPanel;//create a field means(a missing variable)
+	
+	private StringListeners textListener;
 	
 	//constructor
 	public Toolbar() {
@@ -27,18 +28,22 @@ public class Toolbar extends JPanel implements ActionListener {
 		add(helloButton);
 		add(goodbyeButton);
 	}
-	public void setTextPanel (TextPanel textPanel) {
-		this.textPanel = textPanel;
+	public void setStringListeners(StringListeners listener) {
+		this.textListener = listener;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton cliked = (JButton)e.getSource();
 		
 		if (cliked == helloButton) {
-			textPanel.appendText("Hello\n");
+			if(textListener !=null);
+				textListener.textEmitted("Hello\n");
+
 		}
 		else if(cliked == goodbyeButton){
-			textPanel.appendText("goodbye\n");
+			if(textListener !=null) {
+				textListener.textEmitted("Goodbye\n");
+			}
 		}
 	}
 	
