@@ -1,4 +1,7 @@
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -31,6 +34,57 @@ public class FormPanel extends JPanel {
 	Border outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
 	setBorder(BorderFactory.createCompoundBorder(outerBorder,innerBorder));
 	//setBorder(BorderFactory.createTitledBorder("Add Person"));
+	
+	setLayout(new GridBagLayout());
+	
+	GridBagConstraints gc = new GridBagConstraints();
+	
+
+	
+
+	/////First row////////
+	gc.weightx = 1;
+	gc.weighty = 0.1;
+	
+	gc.gridx = 0;
+	gc.gridy = 0;
+	gc.fill = GridBagConstraints.NONE;
+	gc.anchor = GridBagConstraints.LINE_END;	
+	add(nameLabel, gc);
+	
+	//creating the field(white box for write) for name
+	gc.gridx = 1;
+	gc.gridy = 0;
+	gc.anchor = GridBagConstraints.LINE_START;
+	add(nameField, gc);
+	
+	/////Second row////////
+	gc.weightx = 1;
+	gc.weighty = 0.1;
+	//creating the occupation name
+	gc.gridy = 1;
+	gc.gridx = 0;
+	gc.anchor = GridBagConstraints.LINE_END;
+	add(occupationLabel, gc);
+	
+	gc.gridy = 1;
+	gc.gridx = 1;
+	gc.anchor = GridBagConstraints.LINE_START;
+	add(occupationField, gc);
+	
+	/////Third row////////	
+	gc.weightx = 1;
+	gc.weighty = 2.0;// move the ok button up and down
+	
+	gc.gridy = 2;
+	gc.gridx = 1;
+	gc.anchor = GridBagConstraints.FIRST_LINE_START;	
+	add(okBtn, gc);//add a button
+	
+	
+	
+	
+	
 	
 	}
 }
