@@ -49,12 +49,14 @@ public class FormPanel extends JPanel {
 	gc.gridx = 0;
 	gc.gridy = 0;
 	gc.fill = GridBagConstraints.NONE;
-	gc.anchor = GridBagConstraints.LINE_END;	
+	gc.anchor = GridBagConstraints.LINE_END;
+	gc.insets = new Insets(0, 0, 0, 5);//padding
 	add(nameLabel, gc);
 	
 	//creating the field(white box for write) for name
 	gc.gridx = 1;
 	gc.gridy = 0;
+	gc.insets = new Insets(0, 0, 0, 5);
 	gc.anchor = GridBagConstraints.LINE_START;
 	add(nameField, gc);
 	
@@ -64,11 +66,13 @@ public class FormPanel extends JPanel {
 	//creating the occupation name
 	gc.gridy = 1;
 	gc.gridx = 0;
+	gc.insets = new Insets(0, 0, 0, 5);
 	gc.anchor = GridBagConstraints.LINE_END;
 	add(occupationLabel, gc);
 	
 	gc.gridy = 1;
 	gc.gridx = 1;
+	gc.insets = new Insets(0, 0, 0, 0);
 	gc.anchor = GridBagConstraints.LINE_START;
 	add(occupationField, gc);
 	
@@ -80,9 +84,6 @@ public class FormPanel extends JPanel {
 	gc.gridx = 1;
 	gc.anchor = GridBagConstraints.FIRST_LINE_START;	
 	add(okBtn, gc);//add a button
-	
-	
-	
 	
 	
 	
